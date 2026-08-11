@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import Header from "./components/Header/header";
-import { AppDiv } from "./App.styles";
+import Home from "./components/Home/home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
-  const { t } = useTranslation();
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -15,8 +15,12 @@ function App() {
   return (
     <div>
       <Header />
-      <h1>{t("welcome")}</h1>
-    </AppDiv>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
