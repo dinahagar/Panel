@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import Header from "./components/Header/header";
 import Home from "./components/Home/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Sidebar from "./components/Sidebar/sidebar";
+import { Layout } from "antd";
 
 function App() {
   const { i18n } = useTranslation();
@@ -13,14 +15,17 @@ function App() {
   }, [i18n.language]);
 
   return (
-    <div>
-      <Header />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Layout style={{ minHeight: "100vh" }}>
+        <Sidebar />
+        <Layout>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Layout>
+      </Layout>
+    </Router>
   );
 }
 

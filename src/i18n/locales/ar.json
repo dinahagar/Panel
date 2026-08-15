@@ -1,3 +1,11 @@
 {
-  "welcome": "مرحباً"
+  "welcome": "مرحباً",
+  "logout": "خروج",
+  "home": "الصفحه الرئيسيه",
+  "Products": "المنتجات",
+  "Categories": "الأقسام",
+  "Electronics": "الإلكترونيات",
+  "Jewelery": "المجوهرات",
+  "Men's Clothing": "الملابس الرجالى",
+  "Women's Clothing": "الملابس الحريمى"
 }

@@ -17,19 +17,18 @@ const useStyles = createStyles(({ token }) => ({
   },
 }));
 
-const items: MenuProps["items"] = [
-  {
-    key: "3",
-    label: "Logout",
-    icon: <LogoutOutlined />,
-    danger: true,
-  },
-];
-
 const Header = () => {
-  const { i18n } = useTranslation();
-
+  const { i18n, t } = useTranslation();
   const { styles } = useStyles();
+  
+  const items: MenuProps["items"] = [
+    {
+      key: "3",
+      label: t("logout"),
+      icon: <LogoutOutlined />,
+      danger: true,
+    },
+  ];
 
   const sharedProps: DropdownProps = {
     menu: { items },

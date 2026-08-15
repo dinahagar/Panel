@@ -1,3 +1,11 @@
 {
-  "welcome": "Welcome"
+  "welcome": "Welcome",
+  "logout": "Logout",
+  "home": "Home",
+  "Products": "Products",
+  "Categories": "Categories",
+  "Electronics": "Electronics",
+  "Jewelery": "Jewelery",
+  "Men's Clothing": "Men's Clothing",
+  "Women's Clothing": "Women's Clothing"
 }

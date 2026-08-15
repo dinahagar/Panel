@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const HeaderDiv = styled.div`
     display: flex;
     justify-content: end;
-    background: #000076;
+    background: #fff;
     padding: 10px 30px;
     gap: 20px;
-    color: #fff;
+    color: #001d66;
 `
 
 export const LangButton = styled.button`
@@ -15,6 +15,6 @@ export const LangButton = styled.button`
     border-radius: 6px;
     font-size: 16px;
     padding: 7px 10px;
-    color: #fff;
+    color: #001d66;
     cursor: pointer;
 `
