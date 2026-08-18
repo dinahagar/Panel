@@ -7,5 +7,6 @@
   "Electronics": "Electronics",
   "Jewelery": "Jewelery",
   "Men's Clothing": "Men's Clothing",
-  "Women's Clothing": "Women's Clothing"
+  "Women's Clothing": "Women's Clothing",
+  "products_error": "There's no products"
 }

@@ -8,6 +8,7 @@ import Sider from "antd/es/layout/Sider";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { SidebarDiv } from "./sidebar.styles";
+import { Link } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -17,8 +18,8 @@ const Sidebar = () => {
   const isRTL = i18n.language === "ar";
 
   const items: MenuItem[] = [
-    { key: "1", icon: <HomeOutlined />, label: t("home") },
-    { key: "2", icon: <ProductOutlined />, label: t("Products") },
+    { key: "1", icon: <HomeOutlined />, label: <Link to="/">{t("home")}</Link> },
+    { key: "2", icon: <ProductOutlined />, label: <Link to="/products">{t("Products")}</Link> },
     {
       key: "sub1",
       label: t("Categories"),
@@ -31,15 +32,17 @@ const Sidebar = () => {
       ],
     },
   ];
-
+  
   return (
     <SidebarDiv $isRTL={isRTL}>
       <Sider
         collapsible
+        breakpoint="md"
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
         style={{ height: "100%" }}
       >
+        <div className="demo-logo-vertical" />
         <Menu
           defaultSelectedKeys={["1"]}
           defaultOpenKeys={["sub1"]}

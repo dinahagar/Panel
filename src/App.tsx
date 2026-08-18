@@ -5,6 +5,7 @@ import Home from "./components/Home/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar/sidebar";
 import { Layout } from "antd";
+import Products from "./Pages/Products/products";
 
 function App() {
   const { i18n } = useTranslation();
@@ -22,6 +23,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
           </Routes>
         </Layout>
       </Layout>
