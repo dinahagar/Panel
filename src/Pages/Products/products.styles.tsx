@@ -1,3 +1,4 @@
+import { Col } from "antd";
 import styled from "styled-components";
 
 export const NoProductsH1 = styled.h1`
@@ -9,4 +10,9 @@ export const NoProductsH1 = styled.h1`
 
 export const ProductsDiv = styled.div`
     padding: 15px;
+`
+
+export const CardCol = styled(Col)`
+    display: flex;
+    justify-content: center;
 `

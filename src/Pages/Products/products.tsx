@@ -1,9 +1,9 @@
 import { useGetAllProductsQuery } from "../../Services/products";
 import type { Product } from "../../Interfaces/products";
 import { useTranslation } from "react-i18next";
-import { NoProductsH1, ProductsDiv } from "./products.styles";
+import { CardCol, NoProductsH1, ProductsDiv } from "./products.styles";
 import ProductCard from "../../components/ProductCard/productCard";
-import { Col, Row, Skeleton } from "antd";
+import { Row, Skeleton } from "antd";
 
 const Products = () => {
   const { t } = useTranslation();
@@ -19,9 +19,9 @@ const Products = () => {
       ) : products ? (
         <Row>
           {products?.map((product: Product) => (
-            <Col xs={24} sm={12} md={12} lg={8} xl={6} key={product?.id}>
+            <CardCol xs={24} sm={12} md={12} lg={8} xl={6} key={product?.id}>
               <ProductCard product={product} />
-            </Col>
+            </CardCol>
           ))}
         </Row>
       ) : null}
