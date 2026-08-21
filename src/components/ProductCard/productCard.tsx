@@ -1,20 +1,31 @@
 import { DeleteOutlined, EditOutlined, EyeOutlined } from "@ant-design/icons";
 import { Rate } from "antd";
 import type { Product } from "../../Interfaces/products";
-import { CardStyle, CategoryP, CountP, DetailsDiv, PriceP, RatingDiv } from "./productCard.style";
+import {
+  CardStyle,
+  CategoryP,
+  CountP,
+  DetailsDiv,
+  PriceP,
+  RatingDiv,
+} from "./productCard.style";
+import { useDeleteProductMutation } from "../../Services/products";
 
 const ProductCard = ({ product }: { product: Product }) => {
+  const [deleteProduct] = useDeleteProductMutation();
+
+  const handleDeleteProduct = (id: number) => {
+    deleteProduct(id)
+  }
+
   return (
     <CardStyle
-      cover={
-        <img
-          draggable={false}
-          alt="example"
-          src={product?.image}
-        />
-      }
+      cover={<img draggable={false} alt="example" src={product?.image} />}
       actions={[
-        <DeleteOutlined key="delete" />,
+        <DeleteOutlined
+          key="delete"
+          onClick={() => handleDeleteProduct(product?.id)}
+        />,
         <EyeOutlined key="view" />,
         <EditOutlined key="edit" />,
       ]}

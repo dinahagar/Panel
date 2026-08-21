@@ -8,5 +8,9 @@ export interface Product {
   rating: {
     rate: number;
     count: number;
-  }
+  };
+}
+
+export interface Products {
+  productsItems: Product[];
 }
