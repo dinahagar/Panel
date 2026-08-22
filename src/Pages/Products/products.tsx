@@ -11,7 +11,7 @@ const Products = () => {
 
   return (
     <ProductsDiv>
-      <h2>Products</h2>
+      <h2>{t("Products")}</h2>
       {error ? (
         <NoProductsH1>{t("products_error")}</NoProductsH1>
       ) : isLoading ? (

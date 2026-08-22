@@ -10,13 +10,14 @@ import {
   RatingDiv,
 } from "./productCard.style";
 import { useDeleteProductMutation } from "../../Services/products";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }: { product: Product }) => {
   const [deleteProduct] = useDeleteProductMutation();
 
   const handleDeleteProduct = (id: number) => {
-    deleteProduct(id)
-  }
+    deleteProduct(id);
+  };
 
   return (
     <CardStyle
@@ -26,7 +27,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           key="delete"
           onClick={() => handleDeleteProduct(product?.id)}
         />,
-        <EyeOutlined key="view" />,
+        <Link to={`/product/${product?.id}`} state={{ product: product }}><EyeOutlined key="view" /></Link>,
         <EditOutlined key="edit" />,
       ]}
     >

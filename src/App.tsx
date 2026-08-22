@@ -1,11 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import Header from "./components/Header/header";
-import Home from "./components/Home/home";
+import Home from "./Pages/Home/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar/sidebar";
 import { Layout } from "antd";
 import Products from "./Pages/Products/products";
+import ProductDetails from "./Pages/ProductDetails/productDetails";
 
 function App() {
   const { i18n } = useTranslation();
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
           </Routes>
         </Layout>
       </Layout>
