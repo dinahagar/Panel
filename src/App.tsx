@@ -7,6 +7,7 @@ import Sidebar from "./components/Sidebar/sidebar";
 import { Layout } from "antd";
 import Products from "./Pages/Products/products";
 import ProductDetails from "./Pages/ProductDetails/productDetails";
+import Form from "./components/DataForm/dataForm";
 
 function App() {
   const { i18n } = useTranslation();
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/form" element={<Form />} />
           </Routes>
         </Layout>
       </Layout>

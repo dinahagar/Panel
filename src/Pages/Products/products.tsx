@@ -11,6 +11,7 @@ import {
 } from "./products.styles";
 import ProductCard from "../../components/ProductCard/productCard";
 import { Row, Skeleton } from "antd";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const { t } = useTranslation();
@@ -21,7 +22,7 @@ const Products = () => {
       <ProductsDiv>
         <ProductsHeader>
           <NewProductH2>{t("Products")}</NewProductH2>
-          <NewProductButton>Add New Product</NewProductButton>
+          <Link to="/form"><NewProductButton>Add New Product</NewProductButton></Link>
         </ProductsHeader>
         {error ? (
           <NoProductsH1>{t("products_error")}</NoProductsH1>
